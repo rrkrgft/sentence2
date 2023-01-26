@@ -1,0 +1,7 @@
+<%= form_with(model: @sentence, local: true ) do |form| %>
+  <div class="sentence_content">
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  </div>
+  <%= form.submit %>
+<% end %>
