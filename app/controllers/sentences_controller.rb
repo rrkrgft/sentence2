@@ -1,5 +1,6 @@
 class SentencesController < ApplicationController
   def index
+    @sentences = Sentence.all
   end
 
   def new
@@ -9,6 +10,10 @@ class SentencesController < ApplicationController
   def create
     Sentence.create(sentence_params)
     redirect_to new_sentence_path
+  end
+
+  def show
+    @sentence = Sentence.find(params[:id])
   end
 
   private
